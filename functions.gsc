@@ -364,11 +364,6 @@ resetLootXP()
 
 CustomStats(player)
 {
-    
-    #ifdef MP if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!player IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!"); #endif
         
     player endon("disconnect");
     player SetDStat("PlayerStatsList", "time_played_total", "StatValue", randomIntRange(172800, 691200));
@@ -409,11 +404,6 @@ ModdedMedals()
 
 KypricLoop(Val, player)
 {
-    #ifdef MP if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!player IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-    #endif
 
     player endon("disconnect");
     if(!isDefined(player.KypricNum))
