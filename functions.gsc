@@ -1,9 +1,6 @@
 #ifdef MP
 do_online()
 {
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
     if(level.inPrematchPeriod)
         return self iPrintLn("^1Error ^7Wait Till Pregame Is Over!");
         
@@ -28,11 +25,6 @@ MaxRank(player)
     player endon("disconnect");
     
     #ifdef MP
-        if(!isDefined(level._online))
-            return self iPrintLn("^1Error ^7Enable Online Stats!");
-        if(!player IsHost())
-            return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-            
         player SetDStat( "playerstatslist", "rankxp", "statValue", 1457200 );
         player SetDStat( "playerstatslist", "rank", "statValue", 54 );
         player SetDStat( "playerstatslist", "plevel", "StatValue", 11 );
@@ -134,20 +126,15 @@ CompleteMapEE(player)
 grab_stats_from_table(player)
 {
     player endon("disconnect");
-    if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
     self iPrintLn("Unlocking All Challenges");
     player.Isunlockingall = true;
     if( player GetDStat( "playerstatslist", "paragon_rankxp", "statValue" ) != 52542000 )
     {
-        self SetDStat( "playerstatslist", "rankxp", "statValue", 1457200 );
-        self SetDStat( "playerstatslist", "rank", "statValue", 54 );
-        self SetDStat( "playerstatslist", "plevel", "StatValue", 11 );
-        self SetDStat( "playerstatslist", "paragon_rankxp", "statValue", 52542000 );
-        self SetDStat( "playerstatslist", "paragon_rank", "statValue", 944 );
+        player SetDStat( "playerstatslist", "rankxp", "statValue", 1457200 );
+        player SetDStat( "playerstatslist", "rank", "statValue", 54 );
+        player SetDStat( "playerstatslist", "plevel", "StatValue", 11 );
+        player SetDStat( "playerstatslist", "paragon_rankxp", "statValue", 52542000 );
+        player SetDStat( "playerstatslist", "paragon_rank", "statValue", 944 );
     }
 
     sort_stats_from_table( "mp_statstable", 0, 256, 9, 2, 3 );
@@ -371,11 +358,6 @@ UnlockAchievements(player)
 #ifdef MP
 resetLootXP()
 {
-    if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
     self SetDStat("mp_loot_xp_due", 0);
 }
 #endif
@@ -411,11 +393,6 @@ CustomStats(player)
 #ifdef MP
 ModdedMedals()
 {
-    if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
     self endon("disconnect");
     for(row=1;row<512;row++)
     {
@@ -704,11 +681,6 @@ KYS(player)
 
 SetCustomStats(stat, value)
 {
-    #ifdef MP if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!"); #endif
-        
     self AddDStat("PlayerStatsList", stat, "StatValue", value);
     wait .2;
     self iPrintLn("Added " + value + " To ^2" + stat);
@@ -717,11 +689,6 @@ SetCustomStats(stat, value)
 
 resetStats()
 {
-    #ifdef MP if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!"); #endif
-        
     self SetDStat("PlayerStatsList", "time_played_total", "StatValue", 0);
     self SetDStat("PlayerStatsList", "headshots", "StatValue", 0);
     self SetDStat("PlayerStatsList", "melee_kills", "StatValue", 0);
@@ -744,11 +711,6 @@ resetStats()
 
 EditClanTag()
 {
-    #ifdef MP if(!isDefined(level._online))
-        return self iPrintLn("^1Error ^7Enable Online Stats!");
-    if(!self IsHost())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!"); #endif
-        
     self SetDStat("clanTagStats", "clanName", "^B^");
     self iPrintLn("Clan Tag ^2Set");
 }
