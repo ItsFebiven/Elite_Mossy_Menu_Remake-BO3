@@ -187,7 +187,6 @@ init()
         level._Weapons             = EnumerateWeapons("weapon");
         level._Killstreaks         = getArrayKeys(level.killstreaks);
         level.prematchPeriod       = 0;
-        level thread FastQuit();
     #endif
 
     #ifdef ZM
@@ -354,12 +353,6 @@ _actor_damage_override_wrapper(inflictor, attacker, damage, flags, meansOfDeath,
         attacker thread zombie_utility::show_hit_marker();
 }
 #endif
-
-FastQuit()
-{
-    level util::waittill_any("end_game", "game_ended");
-    KillServer();
-}
 
 #ifdef MP
 CacheWeapons()
