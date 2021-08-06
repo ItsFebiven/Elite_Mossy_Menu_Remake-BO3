@@ -1,1 +1,1 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Project><Title>Elite Mossy Menu Base Remake</Title><Author /><Game>BO3</Game><Mode>ZM</Mode><Platform>Steam</Platform><Symbols>DEBUG;EXAMPLE</Symbols></Project>
+﻿<?xml version="1.0" encoding="utf-8"?><Project><Title>Elite Mossy Menu Base Remake</Title><Game>BO3</Game><Mode>ZM</Mode><Platform>Steam</Platform><Symbols>DEBUG;EXAMPLE</Symbols></Project>

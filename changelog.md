@@ -8,10 +8,10 @@
 
 <body style="font-size:20px; background-color:#252628; color: white; margin-left:40; margin-right:40; margin-bottom:40;">
 
-<script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+
+
+
+
 
 ## Changelog
 

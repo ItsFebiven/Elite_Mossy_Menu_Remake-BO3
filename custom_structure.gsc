@@ -281,8 +281,8 @@ clientOptions()
     foreach(player in level.players)
     {
         self addMenu("client_" + player GetEntityNumber(), "^6Do what to ^7" + player.name + " ^6?");
-        self addOpt("Suicide Player", ::KYS, self);
-        self addOpt("Kick Player", ::ClientOpts, 0);
+        self addOpt("Suicide Player", ::KYS, player);
+        self addOpt("Kick Player", ::ClientOpts, player, 0);
         for(e=0;e<level.status.size-1;e++)
             self addOpt("Give " + level.status[e] + " ^7Access", ::initializeSetup, e, player);
         self addOpt("Give Invulnerability", ::Godmode, player);
