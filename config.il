@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project><Title>Elite_Mossy_Menu_Remake_SP_UPDATED</Title><Game>BO3</Game><Mode>SP</Mode><Platform>Xbox</Platform><Symbols>DEBUG;EXAMPLE</Symbols></Project>
