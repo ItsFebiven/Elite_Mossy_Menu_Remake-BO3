@@ -1,6 +1,6 @@
 # Elite_Mossy_Menu_Remake-BO3
 
-### Version 1.0.4 
+### Version 1.0.5
 - Removed `Access Level` prints on player spawn for more stealth modding!
 - Move options Y on console for people using it on `PS4`
 
