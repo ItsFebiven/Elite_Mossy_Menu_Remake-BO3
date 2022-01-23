@@ -1,6 +1,10 @@
 # Elite_Mossy_Menu_Remake-BO3
 
 ### Version 1.0.4 
+- Removed `Access Level` prints on player spawn for more stealth modding!
+- Move options Y on console for people using it on `PS4`
+
+### Version 1.0.4 
 - Added support for serious T7 Compiler, Make sure you change `SP` in `gsc.conf` to correct gametype!
 
 ### Version 1.0.3 
