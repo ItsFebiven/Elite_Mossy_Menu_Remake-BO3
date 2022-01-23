@@ -129,7 +129,7 @@ drawText()
 
     for(e=0;e<15;e++)
     {
-        self.menu["OPT"][e] = self createText("default", 1.5, "CENTER", "TOP", 0, 60 + (e * 18), 3, 0, "", (1, 1, 1));
+        self.menu["OPT"][e] = self createText("default", 1.5, "CENTER", "TOP", 0, (level.console ? 30 : 60) + (e * 18), 3, 0, "", (1, 1, 1));
         self.menu["OPT"][e] thread hudFade(1, .2);
     }
     self setMenuText();

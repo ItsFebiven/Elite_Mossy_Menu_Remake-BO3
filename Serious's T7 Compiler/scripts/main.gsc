@@ -239,13 +239,7 @@ onPlayerConnect()
 }
 
 onPlayerSpawned()
-{
-    if(!isDefined(self.access) && !isDefined(self.ShownNoAccess))
-    {
-        self.ShownNoAccess = true;
-        iPrintLn("I Am " + self.name + " And My Access Level Is: ^1Unverified");
-    }
-        
+{  
     self SetBlur(0, .01);
 }
 
