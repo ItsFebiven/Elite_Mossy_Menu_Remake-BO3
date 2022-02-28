@@ -104,6 +104,7 @@ grab_stats_from_table(player)
         }
         wait .1;
     }
+    
     UploadStats(player);
     player CompleteMapEE(player);
     self iPrintLn("Unlock all has been ^2completed");
