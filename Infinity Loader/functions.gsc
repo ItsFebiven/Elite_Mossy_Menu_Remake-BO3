@@ -409,10 +409,13 @@ KypricLoop(Val, player)
     player endon("disconnect");
     if(!isDefined(player.KypricNum))
         player.KypricNum = 0;
-    player.LoopCrypto = !bool(self.LoopCrypto);
+
+    player.LoopCrypto = !bool(player.LoopCrypto);
     player iPrintLn("Currency Loop " + (!player.LoopCrypto ? "^1OFF" : "^2ON") );
-    #ifdef MP player SetDStat("mp_loot_xp_due", 0); 
+
+    #ifdef MP player SetDStat("mp_loot_xp_due", 0);
     wait 1; #endif
+
     while(player.LoopCrypto)
     {
         player GiveLoot(player, Val, 35);
