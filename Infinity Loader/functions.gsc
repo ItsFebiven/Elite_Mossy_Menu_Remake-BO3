@@ -713,17 +713,16 @@ Multijump(currentNum = 0)
 {
     self endon("disconnect");
     level endon("game_ended");
-    self notify("SMulti");
+
     self.Multijump = !bool(self.Multijump);
-    self iPrintLn("Multi Jump " + (!self.Multijump ? "^1OFF" : "^2ON") );
-    self endon("SMulti");
+    self iPrintLn("Multi Jump " + (!bool(self.Multijump) ? "^1OFF" : "^2ON") );
     
-    if(isDefined(self.Multijump))
+    if(bool(self.Multijump))
         self setPerk("specialty_fallheight");
     else
         self unSetPerk("specialty_fallheight");
         
-    while(IsDefined(self.Multijump))
+    while(bool(self.Multijump))
     {
         if(self JumpButtonPressed() && currentNum < 15)
         {
@@ -2370,29 +2369,30 @@ AllThirdPerson()
 
 AllMaxRank()
 {
-    if(SessionModeIsMultiplayerGame())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
     self iPrintLn("All Players ^2Max Rank & Prestige");
     foreach(player in level.players)
-        self MaxRank(player);
+    {
+        if(!player IsHost())
+            self MaxRank(player);
+    }
 }
     
 AllPlayerChallenges()
-{
-    if(SessionModeIsMultiplayerGame())
-        return self iPrintLn("^1Error ^7Account Stats Are Host ONLY!");
-        
+{ 
     foreach(player in level.players)
+    {
         if(!player IsHost() || !bool(player.Isunlockingall))
             player grab_stats_from_table(player); 
+    }
 }
         
 AllPlayerAchievements()
 {
     foreach(player in level.players)
+    {
         if(!player IsHost())
             player UnlockAchievements(player);
+    }
 }
         
 #ifdef SP
